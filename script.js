@@ -3,7 +3,7 @@ const countriesContainer = document.querySelector(".countries");
 const latitudeInput = document.querySelector("#latitude");
 const longitudeInput = document.querySelector("#longitude");
 
-const apiKey = "eebc6880-891f-11eb-8b57-8dbc5772db39";  // take yours !!!
+const apiKey = "";  // take yours !!!
 
 let url = `https://app.geocodeapi.io/api/v1/reverse?apikey=`;
 
