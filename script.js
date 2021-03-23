@@ -27,14 +27,30 @@ const whereAmI = function (lat, lng) {
             const country = data.features[0].properties.country;
             console.log(`You are in ${region}, country of ${country}!`);
 		
+	fetch(flagURL + country)
+            .then((response)=> {
+                    if(response.ok){
+                        console.log(response)
+                        return response.json();
+                    } else {
+                        return new Error(`request failed!!!`)
+                    }
+            })
+            .then( data => {
+                renderCountry(data[0], region)
+                // console.log(data[0])
+            })
+        
+        .catch( err => {
+            console.log(err);
+        });
+    
+        
+        //console.log(response)	
             
 });
 }
 //whereAmI(36.991 , 35.330)
-	
-	
-  
-};
 
 
 btn.addEventListener("click", displayCountry);
